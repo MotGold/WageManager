@@ -1,0 +1,97 @@
+<div>
+    <nav style="text-align: center">
+        <h3>Employee List</h3>
+    </nav>
+    <header *ngIf="vis==false">
+        <button (click)="show()">Add employee</button>
+    </header>
+    <div *ngIf="vis==true" style=" text-align: center">
+        <input name="id" type="text" placeholder="id" [(ngModel)]="id">
+        <input name="firstName" type="text" placeholder="First Name" [(ngModel)]="firstName">
+        <input name="lastName" type="text" placeholder="Last Name" [(ngModel)]="lastName">
+        <input name="bankAccount" type="text" placeholder="Bank Account" [(ngModel)]="bankAccount">
+        <input name="salary" type="text" placeholder="Salary" [(ngModel)]="salary">
+        <select name="type" [(ngModel)]="type">
+            <option value="null" hidden disabled selected>Department:</option>
+            <option value=1>Marketing</option>
+            <option value=2>accountancy</option>
+            <option value=3>maintenance</option>
+            <option value=4>high management</option>
+            <option value=5>programming</option>
+            <option value=6>user interface</option>
+            <option value=7>other</option>
+        </select>
+        <input name="position" type="text" placeholder="position" [(ngModel)]="position"><br />
+        <input style="margin-top: 0.5%;" type="button" value="add new employee" (click)="addEmployee()">
+        <input type="button" value="Cancel" (click)="Cancel()">
+    </div><br />
+    <div class="main">
+        <span class="bold">
+            <span class="bob2">I.D. number</span>
+            <span class="bob2">Hiring date</span>
+            <span class="bob2">First name</span>
+            <span class="bob2">Last name</span>
+            <span class="bob2">Bank account</span>
+            <span class="bob2">Current salary</span>
+            <span class="bob2">Last payment date</span>
+            <span class="bob2">Department</span>
+            <span class="bob2">Position</span>
+            <button class="butt3">pay</button>
+            <button class="butt3">history</button>
+            <button class="butt3">editi</button>
+            <button class="butt3">deletefffff</button>
+        </span>
+        <main *ngFor="let emp of employees">
+            <span *ngIf="emp.id!=id">
+                <span class="bob">{{emp.id}}</span>
+                <span class="bob">{{emp.hiringDate}}</span>
+                <span class="bob">{{emp.firstName}}</span>
+                <span class="bob">{{emp.lastName}}</span>
+                <span class="bob">{{emp.bankAccount}}</span>
+                <span class="bob">{{emp.salary}}</span>
+                <span *ngIf="emp.latestDateOfTransfer != null" class="bob">{{emp.latestDateOfTransfer}}</span>
+                <span *ngIf="emp.latestDateOfTransfer == null" class="bob">new employee</span>
+                <span class="bob">{{emp.department}}</span>
+                <span class="bob">{{emp.position}}</span>
+                <button (click)="sendPay(emp.id)" class="butt">pay</button>
+                <button (click)="showHistory(emp.id)" class="butt">history</button>
+                <button (click)="openEdit(emp)" class="butt">edit</button>
+                <button (click)="fire1employee(emp.id)" class="butt">delete</button>
+            </span>
+            <div class="gg1" *ngIf="emp.id==historyId">
+                <div class="bob">Date sent:</div>
+                <div class="bob">Sum recived:</div>
+                <div *ngFor="let h of history">
+                    <span class="bob">{{h.date}}</span>
+                    <span class="bob">{{h.payCheck}}</span>
+                </div>
+                <button (click)="hideHistory()" class="butt2">Close</button>
+            </div>
+            <div style="margin-left: 7%;" *ngIf="emp.id==id && vis2==false" class="ggo">
+                <input name="id" type="text" placeholder="id" [(ngModel)]="tempId">
+                <input name="hire" type="date" placeholder="hiringDate" [(ngModel)]="hiringDate">
+                <input style="margin-left: 1.1%" name="firstName" type="text" placeholder="First Name"
+                    [(ngModel)]="firstName">
+                <input name="lastName" type="text" placeholder="Last Name" [(ngModel)]="lastName">
+                <input name="bankAccount" type="text" placeholder="Bank Account" [(ngModel)]="bankAccount">
+                <input name="salary" type="text" placeholder="Salary" [(ngModel)]="salary">
+                <input name="latestDateOfTransfer" type="date" placeholder="transfer Date"
+                    [(ngModel)]="latestDateOfTransfer">
+                <select style="margin-left: 1.1%" name="type" [(ngModel)]="type">
+                    <option value="null" hidden disabled selected>Department:</option>
+                    <option value=1>Marketing</option>
+                    <option value=2>accountancy</option>
+                    <option value=3>maintenance</option>
+                    <option value=4>high management</option>
+                    <option value=5>programming</option>
+                    <option value=6>user interface</option>
+                    <option value=7>other</option>
+                </select>
+                <input style="margin-left: 1.1%" name="position" type="text" placeholder="position"
+                    [(ngModel)]="position">
+                <input type="button" value="update employee" (click)="editEmployee()">
+                <input type="button" value="Cancel" (click)="empty()">
+            </div><br />
+        </main>
+    </div>
+</div>

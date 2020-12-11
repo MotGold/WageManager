@@ -1,0 +1,73 @@
+button{
+    min-width: fit-content;
+}
+
+.main{
+    text-align: center;
+    min-width: 1750px;
+}
+
+.bob{
+    display: inline-block;
+    min-width: 8%;
+    border: double;
+    background-color: ivory;
+}
+
+
+.bob2{
+    display: inline-block;
+    min-width: 8%;
+    border: double;
+    background-color: khaki;
+}
+
+.butt{
+    margin-left: 0.3%;
+}
+
+.butt2{
+    text-align: center;
+    margin-top: 0.3%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.butt3{
+    text-align: center;
+    margin-top: 0.3%;
+    visibility: hidden;
+}
+
+input{
+    margin-right: 1%;
+}
+
+select{
+    margin-right: 0.5%;
+}
+
+.scott{
+    display: grid;
+}
+
+.ggo{
+    text-align: left;
+    margin-top: 1.1em;
+}
+
+.gg1{
+    text-align: center;
+    margin-top: 1.1em;
+    margin-bottom: 1em;
+}
+
+.abc{
+    margin-top: 150px;
+    text-align: center;
+    min-width: 1750px;
+}
+
+

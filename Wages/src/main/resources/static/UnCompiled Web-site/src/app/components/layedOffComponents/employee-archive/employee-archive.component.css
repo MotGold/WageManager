@@ -1,0 +1,90 @@
+button{
+    min-width: fit-content;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 90% 10%;
+   
+}
+
+h3{
+    margin-left: 10%;
+}
+
+header{
+    text-align: center;
+    margin-right: 1%;
+}
+
+main{
+    text-align: center;
+    min-width: 1750px;
+}
+
+.bob{
+    display: inline-block;
+    min-width: 8%;
+    border: double;
+    background-color: ivory;
+}
+
+
+.bob2{
+    display: inline-block;
+    min-width: 8%;
+    border: double;
+    background-color: khaki;
+}
+
+
+.butt{
+    margin-left: 0.3%;
+}
+
+.butt2{
+    text-align: center;
+    margin-top: 0.3%;
+}
+
+.scott{
+    display: grid;
+}
+
+.ggo{
+    text-align: left;
+    margin-top: 1.1em;
+    margin-left: 12.4%;
+}
+
+table{
+    display: inline-table;
+}
+
+.gg1{
+    text-align: center;
+    margin-top: 1.1em;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.abc{
+    text-align: center;
+    min-width: 1750px;
+}
+
+.butt3{
+    text-align: center;
+    margin-top: 0.3%;
+    visibility: hidden;
+}
+
+.marginLeft2{
+    margin-left: 2%;
+}
+
+.marginLeft1{
+    margin-left: 1%;
+}

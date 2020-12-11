@@ -1,0 +1,31 @@
+<div>
+    <nav>
+        <button (click)="employees()">Back</button>
+        <button (click)="logOut()">Log out</button>
+        <form>
+            <input name="name1" type="text" placeholder="First Name" [(ngModel)]="first">
+            <input name="name2" type="text" placeholder="Last Name" [(ngModel)]="last">
+            <input type="button" (click)="findByname()" value="Search">
+        </form>
+        <form>
+            <input name="user" type="number" placeholder="id" [(ngModel)]="id">
+            <input type="button" value="Search" (click)="findById()">
+        </form>
+        <form>
+            <select name="type" [(ngModel)]="type">
+                <option value=null hidden disabled selected>Employees by Department</option>
+                <option value=1>Marketing</option>
+                <option value=2>accountancy</option>
+                <option value=3>maintenance</option>
+                <option value=4>high Management</option>
+                <option value=5>programming</option>
+                <option value=6>user Interface</option>
+                <option value=7>other</option>
+            </select>
+            <input type="button" value="Go" (click)="findByDepartment()">
+        </form>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>

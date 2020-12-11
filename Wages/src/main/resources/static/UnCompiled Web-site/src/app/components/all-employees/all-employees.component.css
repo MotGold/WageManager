@@ -1,0 +1,22 @@
+form{
+    display: inline;
+    text-align: center;
+}
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    min-width: 1750px;
+}
+
+button{
+    width: fit-content;
+}
+
+input{
+    margin-right: 1%;
+    max-width: 30%;
+}
+
+select{
+    margin-right: 1%;
+}

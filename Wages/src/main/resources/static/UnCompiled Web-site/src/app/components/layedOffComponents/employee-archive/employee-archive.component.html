@@ -1,0 +1,66 @@
+<div>
+    <nav style="text-align: center">
+        <h3>Employee Archive</h3>
+    </nav>
+    <div class="abc">
+        <span class="bold">
+            <span class="bob2">I.D. number</span>
+            <span class="bob2">Hiring date</span>
+            <span class="bob2">Termination date</span>
+            <span class="bob2">First name</span>
+            <span class="bob2">Last name</span>
+            <span class="bob2">Bank account</span>
+            <span class="bob2">Department</span>
+            <span class="bob2">Position</span>
+            <button class="butt3">history</button>
+            <button class="butt3">edit</button>
+            <button class="butt3">deleteeei</button>
+        </span>
+    </div>
+    <main *ngFor="let emp of employees">
+        <span *ngIf="emp.id!=id">
+            <span class="bob">{{emp.id}}</span>
+            <span class="bob">{{emp.hiringDate}}</span>
+            <span class="bob">{{emp.terminationDate}}</span>
+            <span class="bob">{{emp.firstName}}</span>
+            <span class="bob">{{emp.lastName}}</span>
+            <span class="bob">{{emp.bankAccount}}</span>
+            <span class="bob">{{emp.department}}</span>
+            <span class="bob">{{emp.position}}</span>
+            <button (click)="showHistory(emp.id)" class="butt">history</button>
+            <button (click)="openEdit(emp)" class="butt">edit</button>
+            <button (click)="deleteEmployee(emp.id)" class="butt">delete</button>
+        </span>
+        <div class="gg1" *ngIf="emp.id==historyId">
+            <div class="bob">Date sent:</div>
+            <div class="bob">Sum recived:</div>
+            <div *ngFor="let h of history">
+                <span class="bob">{{h.date}}</span>
+                <span class="bob">{{h.payCheck}}</span>
+            </div>
+            <button (click)="hideHistory()" class="butt2">Close</button>
+        </div>
+        <div *ngIf="emp.id==id && vis2==false" class="ggo">
+            <input name="id" type="text" placeholder="id" [(ngModel)]="tempId">
+            <input class="marginLeft2" name="hire" type="date" placeholder="hiringDate" [(ngModel)]="hiringDate">
+            <input class="marginLeft2" name="fire" type="date" placeholder="firingDate" [(ngModel)]="terminationDate">
+            <input class="marginLeft2" name="firstName" type="text" placeholder="First Name" [(ngModel)]="firstName">
+            <input class="marginLeft1" name="lastName" type="text" placeholder="Last Name" [(ngModel)]="lastName">
+            <input class="marginLeft1" name="bankAccount" type="text" placeholder="Bank Account"
+                [(ngModel)]="bankAccount">
+            <select class="marginLeft1" name="type" [(ngModel)]="type">
+                <option value="null" hidden disabled selected>Department:</option>
+                <option value=1>Marketing</option>
+                <option value=2>accountancy</option>
+                <option value=3>maintenance</option>
+                <option value=4>high management</option>
+                <option value=5>programming</option>
+                <option value=6>user interface</option>
+                <option value=7>other</option>
+            </select>
+            <input class="marginLeft1" name="position" type="text" placeholder="position" [(ngModel)]="position">
+            <input class="butt" type="button" value="update employee" (click)="editEmployee()">
+            <input class="butt" type="button" value="Cancel" (click)="empty()">
+        </div><br />
+    </main>
+</div>

@@ -1,0 +1,18 @@
+<div>
+    <nav style="text-align: center">
+        <h3>Admin List</h3>
+        <span style="text-align: right">
+            <button (click)="employees()">Back</button>
+        </span>
+    </nav>
+    <header>
+        <input name="user" type="text" placeholder="User" [(ngModel)]="user">
+        <input name="pass" type="password" placeholder="Password" [(ngModel)]="pass">
+        <input type="button" value="add new Admin" (click)="addAdmin()">
+    </header><br/>
+    <main *ngFor="let admin of admins">
+        <span class="bob">{{admin.user}}</span>
+        <span class="bob">{{admin.password}}</span>
+        <button (click)="delete1Admin(admin.id)">delete admin</button>
+    </main>
+</div>

@@ -1,0 +1,33 @@
+button{
+    width: fit-content;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+h3{
+    margin-top: 0px;
+    margin-left: 10%;
+}
+
+header{
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
+
+.bob{
+    display: inline-block;
+    width: 10%;
+    border: double;
+    padding: 0.5%;
+    background-color: ivory;
+}
+
+button{
+    margin: 0.5%;
+}
